@@ -59,14 +59,7 @@ var meyveler = [
   "🥥",
 ];
 
-var emojiler = {
-  ":)": "🙂",
-  ":(": "😔",
-  ":d": "😁",
-  ":p": "😛",
-  ":o": "😱",
-  "<3": "❤️",
-};
+
 
 /* ÖRNEK GÖREV:
 	cumleKur fonksiyonuna aşağıdakileri uygulayın:
@@ -108,7 +101,7 @@ console.log (cumleKur("Hello", "World"))
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini 
 elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 
-var bircumle = cumleKur ( "Ben ", "İyi ", "Bir ", "Yazılımcı ", "Olacağım!")
+var bircumle = cumleKur ("Ben ", "iyi ", "bir ", "yazılımcı ", "olacağım!")
 
 console.log ("Örnek Görev:" , bircumle);
 
@@ -182,9 +175,9 @@ Kirpiyi dizinin son elemanına ekleyin 🦔
  */
 
 //3b çözümü
-meyveler.unshift ("🐇");
-meyveler.push ("🦔");
-console.log ("Görev 3.b", meyveler);
+sebzeler.unshift ("🐇");
+sebzeler.push ("🦔");
+console.log ("Görev 3.b", sebzeler);
 
 /* 			3c. manav isminde bir dizi oluşturun.`meyveler` dizisi ilk elemanlara, `sebzeler` dizisi son 
 elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine aktarın. (.concat metodu)
@@ -195,6 +188,7 @@ elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine 
 console.log ("Görev 3.c.alt;" , manav);
 */
 var manav = meyveler.concat(sebzeler);
+//manav = concat (meyveler,sebzeler) //hocann çözümü
 console.log ("Görev 3.c", manav);
 
  
@@ -215,10 +209,36 @@ console.log ("Görev 3.c", manav);
         (.toUpperCase ve .toLowerCase metotlarıı kullanabilirsiniz.)
 			4. elde edilen string döndürülecek
  */
+      var emojiler = {
+        ":)": "🙂",
+        ":(": "😔",
+        ":d": "😁",
+        ":p": "😛",
+        ":o": "😱",
+        "<3": "❤️",
+      };
 
-function emojileriDonustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+// REGEXP ÇÖZÜMÜ,HOCADA ÇALIŞTI BENDE ÇALIŞMADI
+
+function emojileriDonustur( biMesajYazicaksin , emojiKlavuzu) {
+  let yeniMesaj = biMesajYazicaksin;
+  let anahtarlar = Object.keys (emojiKlavuzu);
+  for (let i= 0; i< anahtarlar.length; i++) {
+    yeniMesaj = yeniMesaj.replaceAll (
+      anahtarlar[i].toLowerCase(),
+      emojiKlavuzu[anahtarlar[i]]
+    );
+    yeniMesaj = yeniMesaj.replaceAll (
+      anahtarlar[i].toUpperCase(),
+      emojiKlavuzu[anahtarlar[i]]
+     );
+  }
+  return yeniMesaj;
 }
+
+console.log ("Görev 4", emojileriDonustur("Selam :) . Nasılsın :D , :d . Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o . biraz da üzüldük :( . Yine de seviliyorsun :3 .)", emojiler));
+
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
