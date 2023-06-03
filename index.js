@@ -167,26 +167,37 @@ console.log ("Görev 2;", paragrafOlustur (cumleler, cumleKur, cumlelereDonustur
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
-			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
- */
+		*/	  
+//      3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
+
 //3a çözümü
-/* kodlar buraya */
+meyveler.pop ();
+meyveler.shift ();
+console.log ("Görev 3.a;" , meyveler);
 
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , 
 Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise 
 arkalarından dolaşacak. Varsayalım ki arkadaşların planları başarılı oldu. Tavşanı dizinin ilk elemanına 🐇, 
 Kirpiyi dizinin son elemanına ekleyin 🦔
  */
+
 //3b çözümü
-/* kodlar buraya */
+meyveler.unshift ("🐇");
+meyveler.push ("🦔");
+console.log ("Görev 3.b", meyveler);
 
 /* 			3c. manav isminde bir dizi oluşturun.`meyveler` dizisi ilk elemanlara, `sebzeler` dizisi son 
 elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine aktarın. (.concat metodu)
  */
-//3c çözümü
-/* kodlar buraya */
 
-var manav;
+//3c çözümü
+/* var manav = [...meyveler, ...sebzeler]
+console.log ("Görev 3.c.alt;" , manav);
+*/
+var manav = meyveler.concat(sebzeler);
+console.log ("Görev 3.c", manav);
+
+ 
 
 /* 	GÖREV 4:
 		Yeni kurulmuş bir mesajlaşma startup firması atılan mesajları emojilerle zenginleştirmek istiyor. 
