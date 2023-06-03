@@ -149,13 +149,21 @@ console.log ("G1 - 2", cumlelereDonustur (cumleler))
          diziye aktarılacak
 			5. Oluşturulan bu dizinin tek sayılı anahtarlarını(index) [1,3,5,7,9] kullanarak ilk 5 elemanı geriçağırım 
          olarak çağırılan cumleKur dizisinin parametreleri olarak aktarılarak çağırılacak ÖRNEK: 
-         callback(dizi[1],dizi[2],dizi[3],dizi[5],dizi[7])
+         callback(dizi[1],dizi[3],dizi[5],dizi[7],dizi[9])
 			6. Oluşturulan paragraf döndürülecek
 	*/
 
-function paragrafOlustur(cumleler, cumlelerFn, cumlelereDonustur) {
-  /* kodlar buraya */
+function paragrafOlustur(cumleler, cumleKurCallBack, cumlelereDonusturCallBack) {
+  const yeniCumleler = cumlelereDonusturCallBack (cumleler, " ")
+console.log ("yeni cümleler;", yeniCumleler)
+return cumleKurCallBack (
+  yeniCumleler[1],
+  yeniCumleler[3],
+  yeniCumleler[5],
+  yeniCumleler[7],
+  yeniCumleler[9])
 }
+console.log ("Görev 2;", paragrafOlustur (cumleler, cumleKur, cumlelereDonustur ))
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
